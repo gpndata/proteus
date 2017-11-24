@@ -471,9 +471,15 @@ func toUpperSnakeCase(s string) string {
 
 func (t *Transformer) defaultOptionsForPackage(p *scanner.Package) Options {
 	return Options{
-		"go_package":                 NewStringValue(p.Name),
-		"(gogoproto.sizer_all)":      NewLiteralValue("false"),
-		"(gogoproto.protosizer_all)": NewLiteralValue("true"),
+		"go_package":                       NewStringValue(p.Path + ";" + p.Name),
+		"(gogoproto.equal_all)":            NewLiteralValue("true"),
+		"(gogoproto.verbose_equal_all)":    NewLiteralValue("true"),
+		"(gogoproto.goproto_stringer_all)": NewLiteralValue("false"),
+		"(gogoproto.gostring_all)":         NewLiteralValue("true"),
+		"(gogoproto.stringer_all)":         NewLiteralValue("true"),
+		"(gogoproto.populate_all)":         NewLiteralValue("true"),
+		"(gogoproto.marshaler_all)":        NewLiteralValue("true"),
+		"(gogoproto.sizer_all)":            NewLiteralValue("true"),
 	}
 }
 
