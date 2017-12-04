@@ -475,10 +475,11 @@ func (t *Transformer) defaultOptionsForPackage(p *scanner.Package) Options {
 		"(gogoproto.equal_all)":            NewLiteralValue("true"),
 		"(gogoproto.verbose_equal_all)":    NewLiteralValue("true"),
 		"(gogoproto.goproto_stringer_all)": NewLiteralValue("false"),
-		"(gogoproto.gostring_all)":         NewLiteralValue("true"),
+		"(gogoproto.gostring_all)":         NewLiteralValue("false"),
 		"(gogoproto.stringer_all)":         NewLiteralValue("true"),
 		"(gogoproto.populate_all)":         NewLiteralValue("true"),
 		"(gogoproto.marshaler_all)":        NewLiteralValue("true"),
+		"(gogoproto.unmarshaler_all)":      NewLiteralValue("true"),
 		"(gogoproto.sizer_all)":            NewLiteralValue("true"),
 	}
 }
